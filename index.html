@@ -233,7 +233,31 @@
       </div>
       <div class="subtitle-container" style="max-width: 100%; margin: auto;">
         <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          <p>
           The proposed method VL-SAFE has two phases, where the first phase generates ground truth safety estimations using CLIPs for each state in offline dataset collected by expert agent, and the second stage will learn a safety-aware world model to generate imagined rollouts along with predicted safety estimations for actor-critic learning.
+          </p>
+          <p>
+          In our approach, we similarly assign weights to each state-action pair in the imagined rollouts. The weight term combines both reward and cost advantages, and is modulated by a VLM-derived safety probability, which dynamically balances the influence of reward-seeking and cost-avoidance. The intuition is that the agent should prioritize reward maximization in safe conditions, and focus on cost minimization when encountering potentially risky situations, where the timing and degree of this tradeoff is guided by the semantic understanding provided by the VLM.
+          </p>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Single Image with Title and Shadowed Container -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 990px; margin: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; background-color: white; border-radius: 8px;">
+      <h2 class="title is-3" style="font-size: 24px; text-align: left;">Driving scenarios and maps.</h2> <!-- Title for the image -->
+      <br>
+      <div class="image-container has-text-centered" style="max-width: 100%; margin: auto;">
+        <!-- Your image here with adjusted width -->
+        <img src="static/images/ds2.png" alt="Descriptive Alt Text" style="width: 100%; height: auto;"/>
+      </div>
+      <div class="subtitle-container" style="max-width: 100%; margin: auto;">
+        <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          All tasks in the CarDreamer simulation platform are conducted on Town 03 and Town 04 maps under CARLA, which provide realistic urban and suburban layouts with diverse traffic elements. As shown in Figure above, the scenarios cover various road geometries and traffic situations essential for testing generalization and robustness in autonomous policies.
         </h2>
       </div>
     </div>

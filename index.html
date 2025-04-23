@@ -162,44 +162,26 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Single Image with Title and Shadowed Container -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
+    <div class="container" style="max-width: 990px; margin: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; background-color: white; border-radius: 8px;">
+      <h2 class="title is-3" style="font-size: 24px; text-align: left;">Overview</h2> <!-- Title for the image -->
+      <br>
+      <div class="image-container has-text-centered" style="max-width: 100%; margin: auto;">
+        <!-- Your image here with adjusted width -->
+        <img src="static/images/_intro_comparison.png" alt="Descriptive Alt Text" style="width: 100%; height: auto;"/>
+      </div>
+      <div class="subtitle-container" style="max-width: 100%; margin: auto;">
+        <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          (a) IL faces two significant issues in practical applications: distribution shift and limitations in asymptotic performance. Training safety and sampling efficiency are the two major bottlenecks constraining RL methods. Additionally, designing an appropriate reward function to capture all desired driving behaviors can be challenging. 
+          (b) Reinforcement Learning from Human Feedback (RLHF) method has proven effective in enhancing both training safety and sampling efficiency in RL. Most studies require expert-level human feedback. Also, few studies have focused on the trustworthiness of RLHF-enabled methods. 
+          (c) In this work, we propose a novel framework named Physics-enhanced Reinforcement Learning to bridge this gap.
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
 
 

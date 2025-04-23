@@ -184,7 +184,35 @@
   </div>
 </section>
 
-
+<!-- Single Image with Title and Shadowed Container -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 990px; margin: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; background-color: white; border-radius: 8px;">
+      <h2 class="title is-3" style="font-size: 24px; text-align: left;">An example from life to prove the effectiveness of VLM-as safety guidance paradigm.</h2> <!-- Title for the image -->
+      <br>
+      <div class="image-container has-text-centered" style="max-width: 100%; margin: auto;">
+        <!-- Your image here with adjusted width -->
+        <img src="static/images/motivation.png" alt="Descriptive Alt Text" style="width: 100%; height: auto;"/>
+      </div>
+      <div class="subtitle-container" style="max-width: 100%; margin: auto;">
+        <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          <p>
+          We introduce our motivation starting from an intuitive life example: imagine an autonomous vehicle approaching a stopped school bus on a multi-lane road, where several children are walking across the street toward the sidewalk. The school bus has its STOP sign extended, indicating that all surrounding vehicles must come to a complete stop.
+          </p>
+          <p>
+          A classical RL-based or offline-trained agent may continue driving or only slightly slow down, as no collision has occurred and the reward function still favors progress. A world model-based agent may also ignore the school bus and its STOP sign during imagined rollouts, failing to distinguish the risk embedded in this visual context. A traditional safe RL policy may behave unpredictably: it may stop in some cases, but often fails to recognize the raised STOP sign and the presence of children, especially if such visual cues were not explicitly encoded in the cost function or training data. This can lead to unsafe decisions or over-generalized conservativeness, such as treating harmless objects like parked vehicles or cones as equivalent threats.
+          </p>
+          <p>
+          In contrast, a <strong>VLM-guided policy</strong> can semantically understand the scene: the raised STOP sign on the school bus and the crossing children clearly indicate a high-risk situation. Even in the absence of a collision, the VLM assigns a low safety score based on visual semantics, guiding the agent to stop proactively and yield to the pedestrians. This enables the agent to maintain appropriate caution in dangerous scenarios without falling into the trap of indiscriminate conservativeness.
+          </p>
+          <p>
+          This example highlights the advantage of <strong>semantic safety reasoning</strong>: it enables agents to make early, context-aware, and proportionate decisions, ultimately allowing them to act safely across varied scenarios.
+          </p>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Youtube video -->

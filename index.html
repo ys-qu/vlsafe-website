@@ -152,7 +152,6 @@
         <div class="content has-text-justified">
           <p>
             Reinforcement learning (RL)-based autonomous driving policy learning faces critical limitations such as low sample efficiency and poor generalization; its reliance on online interactions and trial-and-error learning is especially unacceptable in safety-critical scenarios. Existing methods, such as safe RL, often fail to capture the true semantic meaning of "safety" in complex driving contexts, leading to either overly conservative behavior or constraint violations. To address these challenges, we propose VL-SAFE, a world model-based safe RL framework with Vision-Language model (VLM)-as safety guidance paradigm, designed for offline safe policy learning. Specifically, we construct offline datasets collected by expert agents and labeled with safety scores derived from VLMs. A world model is trained to generate imagined rollouts together with safety estimations, allowing the agent to perform safe planning without interacting with the real environment. Based on these imagined trajectories and safety evaluations, actor-critic learning is conducted under VLM-based safety guidance to optimize the driving policy more safely and efficiently. Extensive evaluations demonstrate that VL-SAFE achieves superior sample efficiency, generalization, safety, and overall performance compared to existing baselines. To the best of our knowledge, this is the first work that introduces a VLM-guided world model-based approach for safe autonomous driving.  The demo video and code can be accessed at: <a href="https://ys-qu.github.io/vlsafe-website/" target="_blank">https://ys-qu.github.io/vlsafe-website/</a>
-
           </p>
         </div>
       </div>
@@ -174,10 +173,18 @@
       </div>
       <div class="subtitle-container" style="max-width: 100%; margin: auto;">
         <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          <p>
           (a) Offline RL, removes the need for online exploration entirely by learning from pre-collected driving data, thus avoiding the safety concerns of real-time trial-and-error; but it still fails occasionally in online testing due to no safety constraints.
+          </p>
+          <p>
           (b) World models can reduce interactions by enabling policy learning through imagined rollouts, this can largely reduce risky actions and improve sample efficiency; but world models can still make risky actions at the initial training stage.
+          </p>
+          <p>
           (c) Safe RL methods explicitly incorporate cost constraints or risk-sensitive objectives into the learning process to restrict unsafe behaviors and ensure long-term safety; safe RL might learn a too conservative policy and unable to generalize due to the lack of semantic understanding of the whole context.
+          </p>
+          <p>
           (d) It is intuitive to combine these methods together to complement each other's strengths and weaknesses. However, more importantly, at the core of these challenges lies a fundamental question: <strong>how can we identify risky states, semantically understand “safety”, and guide policy learning accordingly?</strong>
+          </p>
         </h2>
       </div>
     </div>
@@ -208,6 +215,25 @@
           <p>
           This example highlights the advantage of <strong>semantic safety reasoning</strong>: it enables agents to make early, context-aware, and proportionate decisions, ultimately allowing them to act safely across varied scenarios.
           </p>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Single Image with Title and Shadowed Container -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 990px; margin: auto; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; background-color: white; border-radius: 8px;">
+      <h2 class="title is-3" style="font-size: 24px; text-align: left;">Overall framework of VL-SAFE.</h2> <!-- Title for the image -->
+      <br>
+      <div class="image-container has-text-centered" style="max-width: 100%; margin: auto;">
+        <!-- Your image here with adjusted width -->
+        <img src="static/images/_overall_framework.png" alt="Descriptive Alt Text" style="width: 100%; height: auto;"/>
+      </div>
+      <div class="subtitle-container" style="max-width: 100%; margin: auto;">
+        <h2 class="subtitle" style="font-size: 15px; text-align: justify;">
+          The proposed method VL-SAFE has two phases, where the first phase generates ground truth safety estimations using CLIPs for each state in offline dataset collected by expert agent, and the second stage will learn a safety-aware world model to generate imagined rollouts along with predicted safety estimations for actor-critic learning.
         </h2>
       </div>
     </div>

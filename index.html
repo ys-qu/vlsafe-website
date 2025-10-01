@@ -125,6 +125,21 @@
   </div>
 </section>
 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Understanding our paper in one sentence</h2>
+        <div class="content has-text-justified">
+          <p>
+            We combine a world model, a VLM safety scorer, and safe RL for autonomous driving: the world model imagines rollouts (r: reward, a: action, c: cost, s: state, s': next state, p: safety score), where a CLIP-based VLM assigns per-state safety scores used as supervision so the world model predicts state-wise safety score p, and safe RL then updates the policy, prioritizing reward when p is high and minimizing cost when p is low.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
